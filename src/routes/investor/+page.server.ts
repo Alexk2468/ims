@@ -17,5 +17,12 @@ export const actions = {
         }
 
         throw redirect(303, '/login')
+    },
+
+    verify: async ({ locals, request }: any) => {
+        const body = Object.fromEntries(await request.formData())
+        return {
+            notVerified: true
+        }
     }
 }

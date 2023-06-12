@@ -7,9 +7,10 @@ export const actions = {
         const body = Object.fromEntries(await request.formData())
 
         let username = generateUsername(body.name.split(' ').join('')).toLowerCase();
+        let accountType = "owner";
 
         try {
-            await locals.pb.collection('users').create({ username, ...body });
+            await locals.pb.collection('users').create({ username, accountType, ...body });
             await locals.pb.collection('users').requestVerification(body.email);
         } catch (err) {
             console.log('Error ', err)  

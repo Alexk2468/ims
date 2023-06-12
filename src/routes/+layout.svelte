@@ -1,5 +1,6 @@
 <script>
 import "../app.postcss";
+import "../app.postcss";
 export let data 
 </script>
 
@@ -12,7 +13,6 @@ export let data
         {#if !data.user}
         <div class="dropdown dropdown-end">
             <a href="/login" class="btn btn-primary">Login</a>
-            <a href="/register" class="btn btn-secondary">Register</a>
         </div>
         {:else}
             <div class="dropdown dropdown-end mr-4">
@@ -43,7 +43,7 @@ export let data
 </div>
 <div class="py-10">
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <slot />
+        <slot></slot>
     </div>
 </div>
 
